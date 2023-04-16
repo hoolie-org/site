@@ -1,0 +1,34 @@
+.radiobox {
+  display: flex;
+  gap: var(--inputs-horizontal-padding);
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.radiobox > * {
+  flex-shrink: 0;
+}
+
+.radiobox-icon {
+  transition: 0.21s;
+}
+
+.radiobox:active > .radiobox-icon {
+  transform: scale(0.9);
+}
+
+.radiobox-icon > svg {
+  width: var(--inputs-icon-size);
+}
+
+@media (prefers-color-scheme: dark) {
+  .radiobox-icon > svg {
+    fill: #fff;
+  }
+}
+
+.radiobox-contents {
+  display: flex;
+  align-items: center;
+  min-height: var(--inputs-icon-size);
+}

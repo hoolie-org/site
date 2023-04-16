@@ -1,0 +1,107 @@
+.services-block {
+
+}
+
+.services {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  margin-top: 50px;
+}
+
+@media (max-width: 1080px) {
+  .services {
+    gap: 30px
+  }
+}
+
+.service {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+  padding: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .service {
+    background: var(--black-color-1000);
+    box-shadow: none
+  }
+}
+
+.service-image {
+  height: 200px;
+  background: #fff;
+  margin: -20px;
+  margin-bottom: 0;
+  padding: 20px;
+}
+
+.service-image > img {
+  width: auto;
+  height: 100%;
+  margin: auto;
+}
+
+.service-base-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.service-name {
+  font-weight: bolder;
+  font-size: 18pt
+}
+
+.service-price {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.service-price > div {
+
+}
+
+.service-price > div:first-child {
+  opacity: .5;
+  font-size: 10pt
+}
+
+@media (prefers-color-scheme: dark) {
+  .service-price > div:first-child {
+    opacity: .7;
+  }
+}
+
+.service-price > div:last-child {
+  background: #000;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+@media (prefers-color-scheme: dark) {
+  .service-price > div:last-child {
+    background: #fff;
+    color: #000
+  }
+}
+
+ul.service-features {
+  margin-top: 20px;
+}
+
+button.service-button {
+  margin-top: 20px;
+}

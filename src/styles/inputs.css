@@ -1,0 +1,191 @@
+:root {
+  --inputs-horizontal-padding: 15px;
+  --inputs-icon-size: 24px;
+  --input-base-height: 50px;
+}
+
+input,
+button,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color-100);
+  padding: 0 var(--inputs-horizontal-padding);
+  height: var(--input-base-height);
+  transition: all 0.21s, padding 0s, border 0s;
+  min-width: 150px;
+}
+
+/* Zeroed inputs */
+
+input.is-zeroed,
+button.is-zeroed,
+textarea.is-zeroed {
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  min-width: unset;
+  border: none
+}
+
+/* Text inputs */
+input[type='text'],
+input[type='password'],
+textarea {
+  background: transparent;
+  box-shadow: none;
+}
+
+textarea {
+  height: auto;
+  resize: none;
+  transition: height 0s;
+  padding: var(--inputs-horizontal-padding);
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type='text'],
+  input[type='password'],
+  textarea {
+    color: #fff;
+  }
+}
+
+input[type='text']:read-only,
+input[type='password']:read-only,
+textarea:read-only {
+  cursor: default;
+}
+
+input[type='text']:not(:read-only, :disabled):focus,
+input[type='password']:not(:read-only, :disabled):focus,
+textarea:not(:read-only, :disabled):focus {
+  box-shadow: 0 0 10px var(--accent-color-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type='text']:not(:read-only, :disabled):focus,
+  input[type='password']:not(:read-only, :disabled):focus,
+  textarea:not(:read-only, :disabled):focus {
+    box-shadow: 0 0 10px var(--accent-color-300);
+  }
+}
+
+/* Buttons */
+
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--inputs-horizontal-padding);
+  padding: 0 var(--inputs-horizontal-padding);
+  background: var(--accent-color-100);
+  color: #fff;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background: #fff;
+    color: #000
+  }
+}
+
+button,
+button > span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+button:disabled {
+  cursor: default;
+  background: var(--black-color-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  button:disabled {
+    background: var(--black-color-300);
+  }
+}
+
+button:not(:disabled, .is-zeroed):hover {
+  background: var(--accent-color-80);
+}
+
+@media (prefers-color-scheme: dark) {
+  button:not(:disabled, .is-zeroed):hover {
+    background: var(--accent-color-10);
+  }
+}
+
+button:not(:disabled, .is-zeroed):active {
+  transform: scale(0.95)
+}
+
+button.is-zeroed {
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  button.is-zeroed {
+    color: #fff;
+  }
+}
+
+button.is-auto-width {
+  width: auto;
+}
+
+button > svg {
+  flex-shrink: 0;
+  width: var(--inputs-icon-size);
+  fill: #fff;
+}
+
+button.is-zeroed > svg {
+  fill: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  button.is-zeroed > svg {
+    fill: #fff;
+  }
+}
+
+/* Label */
+.label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+
+/* Field wrapper */
+.field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inputs-horizontal-padding);
+}
+
+.field-wrapper:not(:first-child) {
+  margin-top: 20px;
+}
+
+.field-wrapper > .field-wrapper {
+  width: 100%;
+  flex: 1;
+  margin-top: 0;
+  min-width: 180px;
+}
+
+.field-wrapper > input:not(.is-zeroed, .is-auto-width),
+.field-wrapper > button:not(.is-zeroed, .is-auto-width),
+.field-wrapper > textarea:not(.is-zeroed, .is-auto-width) {
+  flex: 1;
+}

@@ -1,0 +1,75 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react/recommended"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "array-callback-return": [2, {"allowImplicit": true}],
+    "no-await-in-loop": 2,
+    "no-constant-binary-expression": 1,
+    "no-constructor-return": 2,
+    "no-duplicate-imports": 2,
+    "no-new-native-nonconstructor": 2,
+    "no-promise-executor-return": 2,
+    "no-self-compare": 2,
+    "no-template-curly-in-string": 1,
+    "no-unmodified-loop-condition": 1,
+    "no-unreachable-loop": 1,
+    "no-unused-private-class-members": 1,
+    "no-use-before-define": 1,
+    "require-atomic-updates": 1,
+
+    "block-scoped-var": 2,
+    "default-case": 2,
+    "default-case-last": 1,
+    "default-param-last": 2,
+    "eqeqeq": 2,
+    "grouped-accessor-pairs": 1,
+    "no-confusing-arrow": 1,
+    "no-console": 1,
+    "no-eval": 2,
+    "no-extend-native": 1,
+    "no-implied-eval": 2,
+    "no-invalid-this": 1,
+    "no-label-var": 1,
+    "no-lonely-if": 1,
+    "no-undefined": 2,
+    "no-var": 1,
+    "prefer-const": 1,
+    "require-await": 1,
+    "require-unicode-regexp": 1
+  },
+
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect"
+    },
+    "linkComponents": [
+      {"name": "Link", "linkAttribute": "to"},
+      {"name": "NavLink", "linkAttribute": "to"},
+      {"name": "Navigate", "linkAttribute": "to"}
+    ]
+  }
+}
